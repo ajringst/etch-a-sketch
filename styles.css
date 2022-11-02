@@ -1,6 +1,5 @@
 
-:root {
-    
+:root {    
     --yellow5: #FF6D00;
     --yellow4: #FF7900;
     --yellow3: #FF8500;
@@ -13,19 +12,109 @@
     --purple1: #9D4EDD;
     --background1: #F7435E;
     --background2: #C6468C;
-}
+     }
 
 body {
+    align-items: center;
+    background-attachment: fixed;
     background-image: linear-gradient(to bottom,#F7435E, #C6468C);
+    background-repeat: no-repeat;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Concert One', cursive;
     height: 100%;
     margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Concert One', cursive;
 }
 
 h1 {
-    text-align: center;
     font-size: 4rem;
-    margin-block: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.square {
+    aspect-ratio: 1/1;
+    border:none;
+    position: relative;
+    width: 70%;
+    max-width: 700px;
+}
+
+/*square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+}
+
+.pixel {
+    aspect-ratio: 1/1;
+    background-color: #240046;
+    margin: 0.5px;
+    min-width:5px;
+    transition: 100ms;
+}
+
+.pixel:hover {
+ opacity:80%;
+}
+
+
+.colors {
+    margin-block: 20px;
+}
+
+.colors button {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+button {
+    border: none;
+    transition: 300ms;
+}
+
+button:hover {
+    translate: 0px -5px;
+}
+
+button:active {
+    translate: 0px 3px;
+}
+
+
+.y1 {
+    background-color:#FF6D00;
+}
+.y2 {
+    background-color:#FF7900;
+}
+.y3 {
+    background-color:#FF8500;
+}
+.y4 {
+    background-color:#FF9100;
+}
+.y5 {
+    background-color:#FF9E00;
+}
+.p1 {
+    background-color: #9D4EDD;
+}
+.p2 {
+    background-color:#7B2CBF;
+}
+.p3 {
+    background-color:#5A189A;
+}
+.p4 {
+    background-color:#3C096C;
+}
+.p5 {
+    background-color:#240046;
 }
