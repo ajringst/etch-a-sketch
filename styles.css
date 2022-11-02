@@ -1,5 +1,6 @@
 
 :root {
+    
     --yellow5: #FF6D00;
     --yellow4: #FF7900;
     --yellow3: #FF8500;
@@ -12,4 +13,19 @@
     --purple1: #9D4EDD;
     --background1: #F7435E;
     --background2: #C6468C;
+}
+
+body {
+    background-image: linear-gradient(to bottom,#F7435E, #C6468C);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Concert One', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin-block: 0px;
 }
