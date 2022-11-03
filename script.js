@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-const btns = document.querySelectorAll("button")
+const btns = document.getElementsByClassName("colors").childNodes;
 
 function applyColor(){
     pixels.classList.add("y1");
@@ -23,3 +23,16 @@ function makePixelGrid(num){
 }
 
 makePixelGrid(16);
+
+const gridPicker = document.querySelector('.scale');
+gridPicker.addEventListener('keypress', function (e) {
+    if (13 == e.keyCode) {
+    let num = gridPicker.value;
+    console.log(num);
+    container.replaceChildren();
+    container.removeAttribute("grid-template-columns");
+    container.setAttribute("grid-template-columns"," repeat(" + num + ", 1fr) !important;");
+    console.log(container.getAttribute("grid-template-columns"));
+    makePixelGrid(num);
+    }
+} );
