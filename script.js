@@ -1,9 +1,14 @@
+let color = ""
 const container = document.querySelector(".container");
-const btns = document.getElementsByClassName("colors").childNodes;
+const btns = document.querySelectorAll("button");
+ btns.forEach(btn => btn.addEventListener("click", function(){
+    color = btn.getAttribute("background-color");
+   /* let classy = this.className;
+    let getClassy = document.getElementsByClassName(classy);
+    color = getClassy.getAttribute("background-color"); */
+    console.log(color);
+ }));
 
-function applyColor(){
-    pixels.classList.add("y1");
-}
 
 /*btns.forEach(button => button.addEventListener("click", e => setColor(e.target.class), false));
 */
@@ -13,7 +18,9 @@ const makePixel = function() {
     div.classList.add("pixel");
     container.appendChild(div);
     const pixels = document.querySelector(".pixel");
-    pixels.addEventListener("mousedown", applyColor);
+    pixels.addEventListener("mousedown", function(){
+        pixels.setAttribute("background-color", color);
+    });
 }
 
 function makePixelGrid(num){
@@ -30,8 +37,9 @@ gridPicker.addEventListener('keypress', function (e) {
     let num = gridPicker.value;
     console.log(num);
     container.replaceChildren();
-    container.removeAttribute("grid-template-columns");
-    container.setAttribute("grid-template-columns"," repeat(" + num + ", 1fr) !important;");
+    //container.removeAttribute("grid-template-columns");
+    container.setAttribute("grid-template-columns", "1fr;");
+    container.setAttribute("grid-template-columns"," repeat(" + num + ", 1fr);");
     console.log(container.getAttribute("grid-template-columns"));
     makePixelGrid(num);
     }
