@@ -1,4 +1,4 @@
-let color = ""
+let color = "#FF6D00";
 const container = document.querySelector(".container");
 const btns = document.querySelectorAll("button");
  btns.forEach(btn => btn.addEventListener("click", function(){
@@ -6,7 +6,7 @@ const btns = document.querySelectorAll("button");
    /* let classy = this.className;
     let getClassy = document.getElementsByClassName(classy);
     color = getClassy.getAttribute("background-color"); */
-    console.log(color);
+    console.log(colorClass);
  }));
 
 
@@ -17,14 +17,12 @@ const makePixel = function() {
     const div = document.createElement('div')
     div.classList.add("pixel");
     container.appendChild(div);
-    const pixels = document.querySelector(".pixel");
-    pixels.addEventListener("mousedown", function(){
-        pixels.setAttribute("background-color", color);
-    });
 }
 
 function makePixelGrid(num){
-    container.setAttribute("grid-template-columns"," repeat(" + num + ", 1fr);");
+    let basis = Math.floor(100/num);
+    console.log(basis);
+    //pixels.setAttribute("flex-basis","calc( " + basis + "% - 0.5px;");
     for(let i=0; i<(num*num); i++){
         makePixel();
     }
@@ -32,16 +30,18 @@ function makePixelGrid(num){
 
 makePixelGrid(16);
 
+const pixels = document.querySelectorAll(".pixel");
+    pixels.forEach(pixel => pixel.addEventListener("mousedown", function onClick(event){
+        event.target.style.backgroundColor = color;
+        console.log(event.target.getAttribute("background-color"));
+    }));
+
 const gridPicker = document.querySelector('.scale');
 gridPicker.addEventListener('keypress', function (e) {
     if (13 == e.keyCode) {
     let num = gridPicker.value;
     console.log(num);
     container.replaceChildren();
-    //container.removeAttribute("grid-template-columns");
-    container.setAttribute("grid-template-columns", "1fr;");
-    container.setAttribute("grid-template-columns"," repeat(" + num + ", 1fr);");
-    console.log(container.getAttribute("grid-template-columns"));
     makePixelGrid(num);
     }
 } );
