@@ -2,7 +2,7 @@ let color = ""
 const container = document.querySelector(".container");
 const btns = document.querySelectorAll("button");
  btns.forEach(btn => btn.addEventListener("click", function(){
-    color = btn.getAttribute("background-color");
+    colorClass = btn.getAttribute("background-color");
    /* let classy = this.className;
     let getClassy = document.getElementsByClassName(classy);
     color = getClassy.getAttribute("background-color"); */
@@ -24,6 +24,7 @@ const makePixel = function() {
 }
 
 function makePixelGrid(num){
+    container.setAttribute("grid-template-columns"," repeat(" + num + ", 1fr);");
     for(let i=0; i<(num*num); i++){
         makePixel();
     }
