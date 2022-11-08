@@ -6,10 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <!--<link rel="stylesheet" href="./styles.css" type="text/css">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <style>
+        :root {    
+    --yellow5: #FF6D00;
+    --yellow4: #FF7900;
+    --yellow3: #FF8500;
+    --yellow2: #FF9100;
+    --yellow1: #FF9E00;
+    --purple5: #240046;
+    --purple4: #3C096C;
+    --purple3: #5A189A;
+    --purple2: #7B2CBF;
+    --purple1: #9D4EDD;
+    --background1: #F7435E;
+    --background2: #C6468C;
+     }
+
+body {
+    align-items: center;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom,#F7435E, #C6468C);
+    background-repeat: no-repeat;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Concert One', cursive;
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.square {
+    aspect-ratio: 1/1;
+    border:none;
+    position: relative;
+    width: 70%;
+    max-width: 700px;
+}
+
+/*square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+}
+
+.pixel {
+    aspect-ratio: 1/1;
+    background-color: #240046;
+    margin: 0.5px;
+    min-width:5px;
+    transition: 100ms;
+}
+
+.pixel:hover {
+ opacity:80%;
+}
+
+
+.colors {
+    margin-block: 20px;
+}
+
+.colors button {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+button {
+    border: none;
+    transition: 300ms;
+}
+
+button:hover {
+    translate: 0px -5px;
+}
+
+button:active {
+    translate: 0px 3px;
+}
+
+
+.y1 {
+    background-color:#FF6D00;
+}
+.y2 {
+    background-color:#FF7900;
+}
+.y3 {
+    background-color:#FF8500;
+}
+.y4 {
+    background-color:#FF9100;
+}
+.y5 {
+    background-color:#FF9E00;
+}
+.p1 {
+    background-color: #9D4EDD;
+}
+.p2 {
+    background-color:#7B2CBF;
+}
+.p3 {
+    background-color:#5A189A;
+}
+.p4 {
+    background-color:#3C096C;
+}
+.p5 {
+    background-color:#240046;
+}
+    </style>
 </head>
 <body>
     <div class="header">
