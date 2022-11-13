@@ -2,11 +2,8 @@ let color = "#FF6D00";
 const container = document.querySelector(".container");
 const btns = document.querySelectorAll("button");
  btns.forEach(btn => btn.addEventListener("click", function(){
-    colorClass = btn.getAttribute("background-color");
-   /* let classy = this.className;
-    let getClassy = document.getElementsByClassName(classy);
-    color = getClassy.getAttribute("background-color"); */
-    console.log(colorClass);
+    color = window.getComputedStyle(btn).backgroundColor;
+    console.log(color);
  }));
 
 
@@ -33,7 +30,6 @@ makePixelGrid(16);
 const pixels = document.querySelectorAll(".pixel");
     pixels.forEach(pixel => pixel.addEventListener("mousedown", function onClick(event){
         event.target.style.backgroundColor = color;
-        console.log(event.target.getAttribute("background-color"));
     }));
 
 const gridPicker = document.querySelector('.scale');
