@@ -1,6 +1,6 @@
 let color = "#FF6D00";
 const container = document.querySelector(".container");
-const pixelContainer = document.querySelector
+const pixelContainer = document.querySelector(".pixelContainer");
 const div = document.createElement('div');
 const btns = document.querySelectorAll("button");
  btns.forEach(btn => btn.addEventListener("click", function(){
@@ -13,22 +13,22 @@ const btns = document.querySelectorAll("button");
 */
 const makePixelContainer = function() {
     div.classList.add(pixelContainer);
-    container.apprendChild(div);
+    container.appendChild(div);
 }
 
 const makePixel = function() {
     div.classList.add("pixel");
-    PixelContainer.appendChild(div);
+    pixelContainer.appendChild(div);
 }
 
 function makePixelGrid(num){
-    for(let i=0; i<(num*num); i++){
-        makePixel();
-    }
-    //document.getElementsByClassName("pixel").style.setAttribute("flex-basis","calc( " + basis + "%;");
-    //console.log (getElementsByClassName("pixel"));
+    for(let i=0; i<num; i++){
+        makePixelContainer();
+        };
     
-}
+    }
+    
+
 
 makePixelGrid(6);
 
