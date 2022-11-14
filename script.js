@@ -1,5 +1,7 @@
 let color = "#FF6D00";
 const container = document.querySelector(".container");
+const pixelContainer = document.querySelector
+const div = document.createElement('div');
 const btns = document.querySelectorAll("button");
  btns.forEach(btn => btn.addEventListener("click", function(){
     color = window.getComputedStyle(btn).backgroundColor;
@@ -9,16 +11,17 @@ const btns = document.querySelectorAll("button");
 
 /*btns.forEach(button => button.addEventListener("click", e => setColor(e.target.class), false));
 */
+const makePixelContainer = function() {
+    div.classList.add(pixelContainer);
+    container.apprendChild(div);
+}
 
 const makePixel = function() {
-    const div = document.createElement('div')
     div.classList.add("pixel");
-    container.appendChild(div);
+    PixelContainer.appendChild(div);
 }
 
 function makePixelGrid(num){
-    let basis = Math.floor(100/num);
-    console.log(basis);
     for(let i=0; i<(num*num); i++){
         makePixel();
     }
@@ -40,7 +43,5 @@ gridPicker.addEventListener('keypress', function (e) {
     let num = gridPicker.value;
     console.log(num);
     container.replaceChildren();
-    makePixelGrid(num);
-    let basis = (100/num);
-    $('.pixel').css("flex", "1 0 ${num}");   }
+    makePixelGrid(num); }
 } );
