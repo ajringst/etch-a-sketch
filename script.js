@@ -11,19 +11,23 @@ const btns = document.querySelectorAll("button");
 
 /*btns.forEach(button => button.addEventListener("click", e => setColor(e.target.class), false));
 */
-const makePixelContainer = function() {
+/*const makePixelContainer = function() {
     div.classList.add(pixelContainer);
     container.appendChild(div);
-}
+}*/
 
-const makePixel = function() {
+const makePixels = function(num) {
+    for(let i = 0; i < num; i++){
     div.classList.add("pixel");
     pixelContainer.appendChild(div);
+    }
 }
 
 function makePixelGrid(num){
     for(let i=0; i<num; i++){
-        makePixelContainer();
+        div.classList.add("pixelContainer");
+        container.appendChild(div);
+        makePixels(num);
         };
     
     }
