@@ -42,5 +42,5 @@ gridPicker.addEventListener('keypress', function (e) {
     container.replaceChildren();
     makePixelGrid(num);
     let basis = (100/num);
-    pixels.forEach(pixel => pixel.setAttribute("style","flex: 1 0 ${basis}%"));   }
+    $('.pixel').css("flex", "1 0 ${num}");   }
 } );
