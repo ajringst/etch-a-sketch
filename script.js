@@ -19,16 +19,18 @@ const makePixel = function() {
 function makePixelGrid(num){
     let basis = Math.floor(100/num);
     console.log(basis);
-    //pixels.setAttribute("flex-basis","calc( " + basis + "% - 0.5px;");
     for(let i=0; i<(num*num); i++){
         makePixel();
     }
+    //document.getElementsByClassName("pixel").style.setAttribute("flex-basis","calc( " + basis + "%;");
+    //console.log (getElementsByClassName("pixel"));
+    
 }
 
-makePixelGrid(16);
+makePixelGrid(6);
 
 const pixels = document.querySelectorAll(".pixel");
-    pixels.forEach(pixel => pixel.addEventListener("mousedown", function onClick(event){
+    pixels.forEach(pixel => pixel.addEventListener("mousedown", function onMouseDown(event){
         event.target.style.backgroundColor = color;
     }));
 
@@ -39,5 +41,6 @@ gridPicker.addEventListener('keypress', function (e) {
     console.log(num);
     container.replaceChildren();
     makePixelGrid(num);
-    }
+    let basis = (100/num);
+    pixels.forEach(pixel => pixel.setAttribute("style","flex: 1 0 ${basis}%"));   }
 } );
