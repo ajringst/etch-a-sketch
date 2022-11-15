@@ -29,7 +29,7 @@ function makePixelGrid(num){
         let pixContClone = pixelContainer.cloneNode(true);
         container.appendChild(pixContClone);
     const pixels = document.querySelectorAll(".pixel");
-    pixels.forEach(pixel => pixel.addEventListener("mousedown", function onMouseDown(event){
+    pixels.forEach(pixel => pixel.addEventListener("mouseover", function onMouseDown(event){
         event.target.style.backgroundColor = color;
     }));
     }
