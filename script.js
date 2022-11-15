@@ -29,11 +29,13 @@ function makePixelGrid(num){
         let pixContClone = pixelContainer.cloneNode(true);
         container.appendChild(pixContClone);
     const pixels = document.querySelectorAll(".pixel");
-    pixels.forEach(pixel => pixel.addEventListener("mouseover", function onMouseDown(event){
+    pixels.forEach(pixel => pixel.addEventListener("mousedown", function onMouseDown(event){
+        //change "mousedown" to "mouseover" if mouse drag to change color is desired instead of click
         event.target.style.backgroundColor = color;
     }));
     }
 }
+
 makePixelGrid(16);
 
 const gridPicker = document.querySelector('.scale');
