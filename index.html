@@ -44,12 +44,22 @@ h1 {
     text-align: center;
 }
 
+<<<<<<< HEAD
 .square {
+=======
+
+.container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+>>>>>>> divindiv
     aspect-ratio: 1/1;
     border:none;
     position: relative;
     width: 70%;
     max-width: 700px;
+<<<<<<< HEAD
 }
 
 /*square:after {
@@ -68,6 +78,24 @@ h1 {
     background-color: #240046;
     margin: 0.5px;
     min-width:5px;
+=======
+    max-height: 700px;
+}
+
+.pixelContainer {
+    display:flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+
+.pixel {
+    flex: 1 1 auto;
+    min-width: 0;
+    aspect-ratio: 1/1;
+    background-color: #240046;
+    margin: 0.5px;
+    min-height: 5px;
+>>>>>>> divindiv
     transition: 100ms;
 }
 
@@ -100,34 +128,34 @@ button:active {
 }
 
 
-.y1 {
+.b1 {
     background-color:#FF6D00;
 }
-.y2 {
+.b2 {
     background-color:#FF7900;
 }
-.y3 {
+.b3 {
     background-color:#FF8500;
 }
-.y4 {
+.b4 {
     background-color:#FF9100;
 }
-.y5 {
+.b5 {
     background-color:#FF9E00;
 }
-.p1 {
+.b6 {
     background-color: #9D4EDD;
 }
-.p2 {
+.b7 {
     background-color:#7B2CBF;
 }
-.p3 {
+.b8 {
     background-color:#5A189A;
 }
-.p4 {
+.b9 {
     background-color:#3C096C;
 }
-.p5 {
+.b10 {
     background-color:#240046;
 }
     </style>
@@ -136,24 +164,22 @@ button:active {
     <div class="header">
         <h1>Etch-A-Sketch</h1>
     </div>
-    <div class="square">
         <div class="container">
 
         </div>
-    </div>
-    <div class="settings">
+    <div class="settings"> 
         <p>Choose a colour!</p>
         <div class="colors">
-            <button class="y1"></button>
-            <button class="y2"></button>
-            <button class="y3"></button>
-            <button class="y4"></button>
-            <button class="y5"></button>
-            <button class="p1"></button>
-            <button class="p2"></button>
-            <button class="p3"></button>
-            <button class="p4"></button>
-            <button class="p5"></button>
+            <button class="b1" style="background-color:#FF9E00"></button>
+            <button class="b2" style="background-color:#FF9100" ></button>
+            <button class="b3" style="background-color:#FF8500"></button>
+            <button class="b4" style="background-color:#FF7900"></button>
+            <button class="b5" style="background-color:#FF6D00"></button>
+            <button class="b6" style="background-color:#9D4EDD"></button>
+            <button class="b7" style="background-color:#7B2CBF"></button>
+            <button class="b8" style="background-color:#5A189A"></button>
+            <button class="b9" style="background-color:#3C096C"></button>
+            <button class="b10" style="background-color:#240046"></button>
         </div>
         <div class="grid">
             <p>Change Grid:</p><input class="scale" type="number" min="2" max="100">
