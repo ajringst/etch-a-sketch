@@ -1,7 +1,8 @@
 let color = "#FF6D00";
 const container = document.querySelector(".container");
+//const pixelContainer = document.querySelector(".pixelContainer");
 const pixelContainer = document.querySelector(".pixelContainer");
-const div = document.createElement('div');
+//const div = document.createElement('div');
 const btns = document.querySelectorAll("button");
  btns.forEach(btn => btn.addEventListener("click", function(){
     color = window.getComputedStyle(btn).backgroundColor;
@@ -11,28 +12,38 @@ const btns = document.querySelectorAll("button");
 
 /*btns.forEach(button => button.addEventListener("click", e => setColor(e.target.class), false));
 */
-/*const makePixelContainer = function() {
-    div.classList.add(pixelContainer);
+function makePixelContainer() {
+    let div = document.createElement("div");
+    div.classList.add("pixelContainer");
     container.appendChild(div);
-}*/
-
-const makePixels = function(num) {
-    for(let i = 0; i < num; i++){
-    div.classList.add("pixel");
-    pixelContainer.appendChild(div);
-    }
+    let innerDiv = document.createElement("div");
+    innerDiv.classList.add("pixel");
+    div.appendChild(innerDiv);
 }
 
-function makePixelGrid(num){
+//function makePixel(){}
+
+/*function makePixelGrid(num){
     for(let i=0; i<num; i++){
         div.classList.add("pixelContainer");
         container.appendChild(div);
         makePixels(num);
         };
     
-    }
-    
+    }   
+*/
 
+function makePixelGrid(num){
+    makePixelContainer();
+    //makePixel();
+    /*let pixelContainerContent = "";
+    for(let i=0; i<num; i++){
+        pixelContainerContent += "${div.classList.add(".pixel")}"";
+        console.log(pixelContainerContent);
+    }
+    pixelContainers.forEach(element => element.innerHTML(pixelContainerContent) )
+    */
+    }
 
 makePixelGrid(6);
 
