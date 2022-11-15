@@ -34,7 +34,7 @@ function makePixelGrid(num){
     }));
     }
 }
-makePixelGrid(6);
+makePixelGrid(16);
 
 const gridPicker = document.querySelector('.scale');
 gridPicker.addEventListener('keypress', function (e) {
